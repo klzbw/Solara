@@ -48,10 +48,12 @@ app.get('/login', (req, res) => {
 // ─── 认证中间件（公开路径会被自动跳过，见 routes/auth.js）───────────────────
 app.use(createAuthMiddleware(PASSWORD));
 
-// ─── 受保护的 API 路由 ──────────────────────────────────────────────────────────
-app.use('/api/storage', createStorageRouter());
+// ─── 公开 API 路由（不需要认证）──────────────────────────────────────────────
 app.use('/proxy',       createProxyRouter());
 app.use('/palette',     createPaletteRouter());
+
+// ─── 受保护的 API 路由 ──────────────────────────────────────────────────────────
+app.use('/api/storage', createStorageRouter());
 
 // ─── 静态文件服务（css/, js/, favicon.png 等）──────────────────────────────────
 app.use(express.static(ROOT_DIR, {

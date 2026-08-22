@@ -10,6 +10,8 @@
 const PUBLIC_PATH_PATTERNS = [
   /^\/login(?:\/|$)/,
   /^\/api\/login(?:\/|$)/,
+  /^\/proxy(?:\/|$)/,
+  /^\/palette(?:\/|$)/,
 ];
 
 const PUBLIC_FILE_EXTENSIONS = new Set([

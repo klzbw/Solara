@@ -59,6 +59,6 @@ echo "Starting Node.js standalone server on port 8787..."
 export PORT=8787
 export HOST=0.0.0.0
 export DATA_DIR=/data
-export WRANGLER_API_URL=http://127.0.0.1:8788
+# export WRANGLER_API_URL=http://127.0.0.1:8788  # 已禁用，直接使用API_BASE_URL
 
 exec node server/index.js
